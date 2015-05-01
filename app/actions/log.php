@@ -9,8 +9,8 @@ if (!$gilles) {
 	$this->redirect('eleves');
 }
 
-$logs = $this['db']->query('SELECT prenom, nom, ip, date, message, niveau FROM eleves, log WHERE log.eleve_id = eleves.id ORDER BY date DESC');
-$logs = $logs->fetchAll();
+$stmt = $this['db']->query('SELECT prenom, nom, ip, date, message, niveau FROM eleves, log WHERE log.eleve_id = eleves.id ORDER BY date DESC');
+$logs = $stmt->fetchAll();
 
 foreach ($logs as &$log) {
 	switch ($log['niveau']) {
