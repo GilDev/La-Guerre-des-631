@@ -1,0 +1,100 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "This file is @generated automatically"
+    ],
+    "hash": "687520bdca58ce0b2dfebde313aa028a",
+    "packages": [
+        {
+            "name": "atomik/atomik",
+            "version": "3.1.5",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/maximebf/atomik.git",
+                "reference": "97367a19014e37146ea2e8644f3487c173d054fd"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/maximebf/atomik/zipball/97367a19014e37146ea2e8644f3487c173d054fd",
+                "reference": "97367a19014e37146ea2e8644f3487c173d054fd",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "type": "framework",
+            "autoload": {
+                "psr-0": {
+                    "Atomik": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Maxime Bouroumeau-Fuseau",
+                    "email": "maxime.bouroumeau@gmail.com",
+                    "homepage": "http://maximebf.com"
+                }
+            ],
+            "description": "Micro framework for PHP5.3+",
+            "homepage": "https://github.com/maximebf/atomik",
+            "time": "2014-03-04 21:48:27"
+        },
+        {
+            "name": "maximebf/consolekit",
+            "version": "1.0.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/maximebf/ConsoleKit.git",
+                "reference": "c46403e2cf98e8413168c523bdbb7c13a386abe5"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/maximebf/ConsoleKit/zipball/c46403e2cf98e8413168c523bdbb7c13a386abe5",
+                "reference": "c46403e2cf98e8413168c523bdbb7c13a386abe5",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "ConsoleKit": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Maxime Bouroumeau-Fuseau",
+                    "email": "maxime.bouroumeau@gmail.com",
+                    "homepage": "http://maximebf.com"
+                }
+            ],
+            "description": "Library to create command line utilities",
+            "homepage": "https://github.com/maximebf/ConsoleKit",
+            "keywords": [
+                "cli",
+                "commands",
+                "console",
+                "shell"
+            ],
+            "time": "2013-01-01 16:03:55"
+        }
+    ],
+    "packages-dev": [],
+    "aliases": [],
+    "minimum-stability": "stable",
+    "stability-flags": [],
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": [],
+    "platform-dev": []
+}
