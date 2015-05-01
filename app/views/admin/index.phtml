@@ -14,6 +14,7 @@
 				<th>Vie</th>
 				<th>Nombre de coups restants</th>
 				<th>A déjà soigné aujourd'hui</th>
+				<th>Actions</th>
 			</tr>
 <?php
 foreach ($eleves as $eleve):
@@ -21,11 +22,11 @@ foreach ($eleves as $eleve):
 			<tr>
 				<form method="post" action="<?php echo $this->url('admin/index') ?>">
 					<input type="hidden" name="id" value="<?php echo $eleve['id'] ?>" />
-					<td><?php echo $this->formatName($eleve) ?></td>
-					<td><input type="number" name="vie" min="0" max="10" value="<?php echo $eleve['vie'] ?>" /></td>
-					<td><input type="number" name="nb_coups_restants" min="0", max="3" value="<?php echo $eleve['nb_coups_restants'] ?>" /></td>
-					<td><input type="checkbox" name="a_soigne" value="1" <?php if ($eleve['a_soigne']) echo 'checked' ?>/></td>
-					<td><input class="btn btn-primary" type="submit" value="Sauvegarder" /></td>
+					<td style="width: 150px"><?php echo $this->formatName($eleve) ?></td>
+					<td><input type="number" style="width: 50px" name="vie" min="0" value="<?php echo $eleve['vie'] ?>" /></td>
+					<td><input type="number" style="width: 50px" name="nb_coups_restants" min="0" value="<?php echo $eleve['nb_coups_restants'] ?>" /></td>
+					<td style="text-align: center"><input type="checkbox" name="a_soigne" value="1" <?php if ($eleve['a_soigne']) echo 'checked' ?>/></td>
+					<td><input class="btn btn-primary btn-sm" type="submit" value="Sauvegarder" /></td>
 				</form>
 			</tr>
 <?php
