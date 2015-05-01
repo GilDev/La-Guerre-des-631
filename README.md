@@ -20,5 +20,5 @@ Pour créer la base de données (SQLite), entrez la commande suivante depuis la 
 
 ## Remarques
 
-* Seul l'utilisateur **Gilles Devillers** peut accéder à la page des logs (changer si besoin dans le fichier *app/actions/log.php*)
+* Le fichier *app/config.php* permet de modifier les administrateurs à l'aide d'un tableau nommé `adminIds` qui contient l'`id` de chaque administrateur dans la table `eleves`
 * La commande `php index.php new-day` doit être exécutée chaque jour à une heure précise

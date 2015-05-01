@@ -1,0 +1,36 @@
+<div class="row">
+	<div class="col-xs-2">
+		<a class="btn btn-primary" href="<?php echo $this->url('admin/log') ?>">Logs</a>
+	</div>
+</div>
+
+<hr />
+
+<div class="row">
+	<div class="col-xs-12">
+		<table class="table">
+			<tr>
+				<th>Élève</th>
+				<th>Vie</th>
+				<th>Nombre de coups restants</th>
+				<th>A déjà soigné aujourd'hui</th>
+			</tr>
+<?php
+foreach ($eleves as $eleve):
+?>
+			<tr>
+				<form method="post" action="<?php echo $this->url('admin/index') ?>">
+					<input type="hidden" name="id" value="<?php echo $eleve['id'] ?>" />
+					<td><?php echo $this->formatName($eleve) ?></td>
+					<td><input type="number" name="vie" min="0" max="10" value="<?php echo $eleve['vie'] ?>" /></td>
+					<td><input type="number" name="nb_coups_restants" min="0", max="3" value="<?php echo $eleve['nb_coups_restants'] ?>" /></td>
+					<td><input type="checkbox" name="a_soigne" value="1" <?php if ($eleve['a_soigne']) echo 'checked' ?>/></td>
+					<td><input class="btn btn-primary" type="submit" value="Sauvegarder" /></td>
+				</form>
+			</tr>
+<?php
+endforeach;
+?>
+		</table>
+	</div>
+</div>

@@ -19,12 +19,14 @@ Atomik::set(array(
 		'Logger',
 		'Console',
 		'Errors' => array(
-			'catch_errors' => false
+			'catch_errors' => true
 		)
 	),
+
+	'adminIds' => array(1),
 
 	'app.layout' => '_layout',
 
 	'atomik.url_rewriting' => true,
-	'atomik.debug' => false
+	'atomik.debug' => true
 ));

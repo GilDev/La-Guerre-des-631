@@ -1,5 +1,9 @@
 <?php
 
+if (Atomik::get('atomik.debug')) {
+	ini_set('display_errors', 1);
+}
+
 function databaseLog($message, $level)
 {
 	Atomik::get('db')->insert('log', array(

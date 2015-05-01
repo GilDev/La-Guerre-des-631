@@ -33,6 +33,11 @@ if ($this['session.authenticated'] === true):
 	<a class="btn btn-primary" href="<?php echo $this->url('eleves') ?>">Aller combattre !</a>
 <?php
 	endif;
+	if($this->isAdmin()):
+?>
+	<a class="btn btn-info" href="<?php echo $this->url('admin') ?>">Administration</a>
+<?php
+	endif;
 ?>
 	<a class="btn btn-danger" href="<?php echo $this->url('deconnexion') ?>">Deconnexion</a>
 </div>

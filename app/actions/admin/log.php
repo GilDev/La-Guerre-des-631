@@ -1,13 +1,6 @@
 <?php
 
-$this->needed('authenticated');
-
-$gilles = $this['db']->count('eleves', array('prenom' => 'gilles', 'nom' => 'devillers'));
-
-if (!$gilles) {
-	$this->flash('Vous n\'avez pas les autorisations nécessaires pour accéder à cette page', 'danger');
-	$this->redirect('eleves');
-}
+$this->needed('administrator');
 
 $stmt = $this['db']->query('SELECT prenom, nom, ip, date, message, niveau FROM eleves, log WHERE log.eleve_id = eleves.id ORDER BY date DESC');
 $logs = $stmt->fetchAll();
