@@ -5,16 +5,12 @@
 		<th>Identité</th>
 		<th>Message</th>
 	</tr>
-<?php
-foreach ($logs as $log):
-?>
+	<?php foreach ($logs as $log): ?>
 	<tr class="<?php echo $log['niveau'] ?>">
 		<td><?php echo $log['date'] ?></td>
 		<td><?php echo $log['ip'] ?></td>
 		<td><?php echo $this->formatName($log) ?></td>
 		<td><?php echo $log['message'] ?></td>
 	</tr>
-<?php
-endforeach;
-?>
+	<?php endforeach; ?>
 </table>

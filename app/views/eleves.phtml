@@ -28,34 +28,31 @@
 				<tr>
 					<th>Nom</th>
 					<th>Vie</th>
-					<?php if ($eleve['nb_coups_restants'] > 0 || !$eleve['a_soigne']): ?><th>Actions</th><?php endif; ?>
+					<?php if ($eleve['nb_coups_restants'] > 0 || !$eleve['a_soigne']): ?>
+					<th>Actions</th>
+					<?php endif; ?>
 				</tr>
-<?php
-foreach ($eleves as $autreEleve):
-?>
+				<?php foreach ($eleves as $autreEleve): ?>
 				<tr>
 					<td style="width: 150px; vertical-align: middle;"><?php echo ($autreEleve['vie'] > 0) ? $this->formatName($autreEleve) : '<del class="text-muted">' . $this->formatName($autreEleve) . '</del>' ?></td>
 					<td style="vertical-align: bottom; height:70px"><?php echo $this->progressBar($autreEleve['vie']) ?></td>
-					<?php if ($eleve['nb_coups_restants'] > 0 || !$eleve['a_soigne']): ?><td style="width: 80px; vertical-align: middle">
+					<?php if ($eleve['nb_coups_restants'] > 0 || !$eleve['a_soigne']): ?>
+					<td style="width: 80px; vertical-align: middle">
 						<?php
 						if ($autreEleve['vie'] > 0):
-							if ($eleve['nb_coups_restants'] > 0):
-						?>
+							if ($eleve['nb_coups_restants'] > 0): ?>
 						<a class="btn btn-danger btn-sm" style="margin-bottom: 5px" href="<?php echo $this->url('frapper', array('id' => $autreEleve['id'])) ?>">Frapper</a>
 						<?php
 							endif;
-							if (!$eleve['a_soigne']):
-						?>
+							if (!$eleve['a_soigne']): ?>
 						<a class="btn btn-success btn-sm" href="<?php echo $this->url('soigner', array('id' => $autreEleve['id'])) ?>">Soigner</a>
 						<?php
 							endif;
-						endif;
-						?>
-					</td><?php endif; ?>
+						endif; ?>
+					</td>
+					<?php endif; ?>
 				</tr>
-<?php
-endforeach;
-?>
+				<?php endforeach; ?>
 			</table>
 		</div>
 	</div>

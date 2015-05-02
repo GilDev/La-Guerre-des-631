@@ -1,6 +1,6 @@
 <div class="row">
 	<div class="col-xs-2">
-		<a class="btn btn-primary" href="<?php echo $this->url('admin/log') ?>">Logs</a>
+		<a class="btn btn-default" href="<?php echo $this->url('admin/log') ?>">Logs</a>
 	</div>
 </div>
 
@@ -16,9 +16,7 @@
 				<th>A déjà soigné aujourd'hui</th>
 				<th>Actions</th>
 			</tr>
-<?php
-foreach ($eleves as $eleve):
-?>
+			<?php foreach ($eleves as $eleve): ?>
 			<tr>
 				<form method="post" action="<?php echo $this->url('admin/index') ?>">
 					<input type="hidden" name="id" value="<?php echo $eleve['id'] ?>" />
@@ -29,9 +27,7 @@ foreach ($eleves as $eleve):
 					<td><input class="btn btn-primary btn-sm" type="submit" value="Sauvegarder" /></td>
 				</form>
 			</tr>
-<?php
-endforeach;
-?>
+			<?php endforeach;?>
 		</table>
 	</div>
 </div>

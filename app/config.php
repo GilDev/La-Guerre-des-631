@@ -12,7 +12,7 @@ Atomik::set(array(
 
 	'plugins' => array(
 		'Db' => array(
-			'dsn' => 'sqlite:combat.db'
+			'dsn' => 'sqlite:guerre.db'
 		),
 		'Session',
 		'Flash',

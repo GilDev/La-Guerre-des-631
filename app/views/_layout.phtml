@@ -23,61 +23,48 @@
 						<a class="navbar-brand" href="<?php echo $this->url('index') ?>">La Guerre des 631 ! <span class="label label-default">V1.0</span></a>
 					</div>
 					<div class="collapse navbar-collapse" id="navbar">
-<?php
-if ($this['session.authenticated'] === true):
-?>
-<div class="navbar-form navbar-right">
-<?php
-	if ($this['request_uri'] != 'eleves'):
-?>
-	<a class="btn btn-primary" href="<?php echo $this->url('eleves') ?>">Aller combattre !</a>
-<?php
-	endif;
-	if($this->isAdmin()):
-?>
-	<a class="btn btn-info" href="<?php echo $this->url('admin') ?>">Administration</a>
-<?php
-	endif;
-?>
-	<a class="btn btn-danger" href="<?php echo $this->url('deconnexion') ?>">Deconnexion</a>
-</div>
-<?php
-else:
-?>
-<form class="navbar-form navbar-right" method="post" action="." autocomplete="on">
-	<input class="form-control form-group" type="text" name="prenom" placeholder="Prénom" size="13" required />
-	<input class="form-control form-group" type="text" name="nom" placeholder="Nom" size="13" required />
-	<input class="form-control form-group" type="password" name="pass" placeholder="Mot de passe" size="13" required />
-	<input class="btn btn-primary" type="submit" value="Connexion" />
-</form>
-<?php
-endif;
-?>
+						<?php if ($this['session.authenticated'] === true): ?>
+						<div class="navbar-form navbar-right">
+							<?php if ($this['request_uri'] != 'eleves'): ?>
+							<a class="btn btn-primary" href="<?php echo $this->url('eleves') ?>">Aller combattre !</a>
+							<?php
+								endif;
+								if($this->isAdmin()): ?>
+							<a class="btn btn-info" href="<?php echo $this->url('admin') ?>">Administration</a>
+							<?php endif; ?>
+							<a class="btn btn-danger" href="<?php echo $this->url('deconnexion') ?>">Deconnexion</a>
+						</div>
+						<?php else: ?>
+						<form class="navbar-form navbar-right" method="post" action="." autocomplete="on">
+							<input class="form-control form-group" type="text" name="prenom" placeholder="Prénom" size="13" required />
+							<input class="form-control form-group" type="text" name="nom" placeholder="Nom" size="13" required />
+							<input class="form-control form-group" type="password" name="pass" placeholder="Mot de passe" size="13" required />
+							<input class="btn btn-primary" type="submit" value="Connexion" />
+						</form>
+						<?php endif; ?>
 					</div>
 				</div>
 			</nav>
 
-<?php
-foreach ($this['flash_messages'] as $type => $flashs):
-	foreach ($flashs as $flash):
-?>
-<div class="alert alert-<?php echo $type ?>">
-	<?php echo $flash ?>
-</div>
-<?php
-	endforeach;
-endforeach;
-?>
+			<?php
+			foreach ($this['flash_messages'] as $type => $flashs):
+				foreach ($flashs as $flash): ?>
+			<div class="alert alert-<?php echo $type ?>">
+				<?php echo $flash ?>
+			</div>
+			<?php
+				endforeach;
+			endforeach; ?>
+
 			<?php echo $contentForLayout ?>
 
 			<div class="row">
 				<div class="col-xs-12">
 					<hr />
-
 					<div class="well well-sm">
 						<p class="text-center">
 							<a href="http://twitter.com/GilDev">GilDev</a> − 2015<br />
-					Publié sous license <a href="http://www.wtfpl.net/txt/copying/">WTFPL</a> :<br />
+							Publié sous license <a href="http://www.wtfpl.net/txt/copying/">WTFPL</a> :<br />
 							<a href="http://www.wtfpl.net/"><img
        src="http://www.wtfpl.net/wp-content/uploads/2012/12/wtfpl-badge-1.png"
        width="88" height="31" alt="WTFPL" /></a>
