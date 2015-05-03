@@ -5,6 +5,7 @@
 				<h3 class="panel-title"><?php echo $this->formatName($eleve) ?> <small class="pull-right"><a class="btn btn-default btn-xs" href="<?php echo $this->url('modifier-mot-de-passe') ?>">Changer de mot de passe</a></small></h3>
 			</div>
 			<div class="panel-body">
+				<?php if ($eleve['vie'] > 0): ?>
 				<div class="row">
 					<div class="col-xs-2">
 						<h5>Votre vie :</h5>
@@ -23,12 +24,22 @@
 						<h5><?php echo ($eleve['a_soigne']) ? 'Vous avez déjà soigné quelqu\'un aujourd\'hui.' : 'Vous pouvez soigner quelqu\'un aujourd\'hui.' ?></h5>
 					</div>
 				</div>
+				<?php else: ?>
+				<div class="row">
+					<div class="col-xs-12">
+						<h3>Vous êtes mort… ='(</h3>
+						<p>
+							Il parait que l'on a ce qu'on mérite, qu'en penses-tu ?
+						</p>
+					</div>
+				</div>
+				<?php endif; ?>
 			</div>
 			<table class="table">
 				<tr>
 					<th>Nom</th>
 					<th>Vie</th>
-					<?php if ($eleve['nb_coups_restants'] > 0 || !$eleve['a_soigne']): ?>
+					<?php if (($eleve['nb_coups_restants'] > 0 || !$eleve['a_soigne']) && $eleve['vie'] > 0): ?>
 					<th>Actions</th>
 					<?php endif; ?>
 				</tr>
@@ -36,7 +47,7 @@
 				<tr>
 					<td style="width: 150px; vertical-align: middle;"><?php echo ($autreEleve['vie'] > 0) ? $this->formatName($autreEleve) : '<del class="text-muted">' . $this->formatName($autreEleve) . '</del>' ?></td>
 					<td style="vertical-align: bottom; height:70px"><?php echo $this->progressBar($autreEleve['vie']) ?></td>
-					<?php if ($eleve['nb_coups_restants'] > 0 || !$eleve['a_soigne']): ?>
+					<?php if (($eleve['nb_coups_restants'] > 0 || !$eleve['a_soigne']) && $eleve['vie'] > 0): ?>
 					<td style="width: 80px; vertical-align: middle">
 						<?php
 						if ($autreEleve['vie'] > 0):
