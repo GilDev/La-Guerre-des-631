@@ -3,10 +3,10 @@
 Atomik::set(array(
 	'app.routes' => array(
 		'frapper/:id' => array(
-			'action' => 'frapper',
+			'action' => 'frapper'
 		),
 		'soigner/:id' => array(
-			'action' => 'soigner',
+			'action' => 'soigner'
 		)
 	),
 
@@ -24,6 +24,7 @@ Atomik::set(array(
 	),
 
 	'adminIds' => array(1),
+	'fichierDieux' => 'dieux.txt',
 
 	'app.layout' => '_layout',
 

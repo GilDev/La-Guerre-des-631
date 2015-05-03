@@ -8,3 +8,7 @@ $stmt = $this['db']->query('SELECT id, prenom, nom, nb_coups_restants, vie, a_so
 $eleves = $stmt->fetchAll();
 
 $nbEleves = count($eleve);
+
+if (file_exists($this['fichierDieux'])) {
+	$dieux = file($this['fichierDieux']);
+}

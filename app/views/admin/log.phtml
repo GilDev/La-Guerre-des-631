@@ -1,16 +1,28 @@
-<table class="table table-bordered">
-	<tr>
-		<th>Date</th>
-		<th>IP</th>
-		<th>Identité</th>
-		<th>Message</th>
-	</tr>
-	<?php foreach ($logs as $log): ?>
-	<tr class="<?php echo $log['niveau'] ?>">
-		<td><?php echo $log['date'] ?></td>
-		<td><?php echo $log['ip'] ?></td>
-		<td><?php echo $this->formatName($log) ?></td>
-		<td><?php echo $log['message'] ?></td>
-	</tr>
-	<?php endforeach; ?>
-</table>
+<div class="row">
+	<div class="col-xs-2">
+		<a class="btn btn-danger" href="<?php echo $this->url('admin/effacer-logs') ?>">Effacer les logs</a>
+	</div>
+</div>
+
+<hr />
+
+<div class="row">
+	<div class="col-xs-12">
+		<table class="table table-bordered">
+			<tr>
+				<th>Date</th>
+				<th>IP</th>
+				<th>Identité</th>
+				<th>Message</th>
+			</tr>
+			<?php foreach ($logs as $log): ?>
+			<tr class="<?php echo $log['niveau'] ?>">
+				<td><?php echo $log['date'] ?></td>
+				<td><?php echo $log['ip'] ?></td>
+				<td><?php echo $this->formatName($log) ?></td>
+				<td><?php echo $log['message'] ?></td>
+			</tr>
+			<?php endforeach; ?>
+		</table>
+	</div>
+</div>

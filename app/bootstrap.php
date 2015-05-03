@@ -2,6 +2,7 @@
 
 if (Atomik::get('atomik.debug')) {
 	ini_set('display_errors', 1);
+	Atomik::set('plugins.Errors.catch_errors', false);
 }
 
 function databaseLog($message, $level)
@@ -20,3 +21,5 @@ define('WARNING', 2);
 define('SUCCESS', 3);
 
 Atomik::listenEvent('Logger::Log', 'databaseLog');
+
+date_default_timezone_set('Europe/Paris');

@@ -1,3 +1,33 @@
+<?php if (isset($dieux[0])): ?>
+<div class="row">
+	<div class="col-sm-<?php echo (isset($dieux[1])) ? 6 : 12 ?>">
+		<div class="panel panel-danger">
+			<div class="panel-heading">
+				Les dieux ont frappé…
+			</div>
+			<div class="panel-body">
+				<?php echo $dieux[0] ?>
+			</div>
+		</div>
+	</div>
+	<?php if (isset($dieux[1])): ?>
+	<div class="col-sm-6">
+		<div class="panel panel-success">
+			<div class="panel-heading">
+				Les dieux ont été sympa…
+			</div>
+			<div class="panel-body">
+				<?php echo $dieux[1] ?>
+			</div>
+		</div>
+	</div>
+	<?php endif; ?>
+</div>
+<?php
+endif;
+if (isset($dieux[1])): ?>
+
+<?php endif; ?>
 <div class="row">
 	<div class="col-xs-12">
 		<div class="panel panel-default">
@@ -28,9 +58,7 @@
 				<div class="row">
 					<div class="col-xs-12">
 						<h3>Vous êtes mort… ='(</h3>
-						<p>
-							Il parait que l'on a ce qu'on mérite, qu'en penses-tu ?
-						</p>
+						<p>Il parait que l'on a ce qu'on mérite, qu'en penses-tu ?</p>
 					</div>
 				</div>
 				<?php endif; ?>
