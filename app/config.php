@@ -23,7 +23,7 @@ Atomik::set(array(
 		)
 	),
 
-	'adminIds' => array(1),
+	'adminIds' => array(12),
 	'fichierDieux' => 'dieux.txt',
 
 	'app.layout' => '_layout',

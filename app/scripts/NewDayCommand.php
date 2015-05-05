@@ -14,11 +14,11 @@ class NewDayCommand extends ConsoleKit\Command
 
 	public function execute(array $args, array $options = array())
 	{
+		// Mise à jour des données des élèves
 		Atomik::get('db')->update('eleves', array('nb_coups_restants' => 3, 'a_soigne' => 0));
 
 
-		require(__DIR__ . '/../helpers/formatName.php');
-
+		// Gestion des dieux
 		$nbEleves = Atomik::get('db')->count('eleves', 'vie > 0');
 
 		$fichierDieux = fopen(Atomik::get('fichierDieux'), 'w');
@@ -36,7 +36,7 @@ class NewDayCommand extends ConsoleKit\Command
 
 		$infosDieux = ($dieu[1]) ? 'Le dieu ' : 'La déesse <b>';
 		$infosDieux .= $dieu[0];
-		$infosDieux .= '</b> a aujourd\'hui choisi de victimiser <b>' . formatName($victime) . '</b> et l\'a frappé <b>' . $nbCoups . '</b> fois !';
+		$infosDieux .= '</b> a aujourd\'hui choisi de victimiser <b>' . Atomik::formatName($victime) . '</b> et l\'a frappé <b>' . $nbCoups . '</b> fois !';
 
 
 		$chanceux = Atomik::get('db')->selectOne('eleves', 'vie > 0 AND vie < 10 AND id <> ' . $victime['id'] . ' ORDER BY RANDOM()');
@@ -44,7 +44,7 @@ class NewDayCommand extends ConsoleKit\Command
 			$nbSoins = mt_rand(1, 2);
 			$chanceux['vie'] += $nbSoins;
 			Atomik::get('db')->update('eleves', array('vie' => $chanceux['vie']), array('id' => $chanceux['id']));
-			$infosDieux .= "\n" . 'À cause d\'un faux jour sur l\'écran, le dieu <b>Pascal</b> a soigné <b>' . $nbSoins . '</b> fois <b>' . formatName($chanceux) . '</b> !';
+			$infosDieux .= "\n" . 'À cause d\'un faux jour sur l\'écran, le dieu <b>Pascal</b> a soigné <b>' . $nbSoins . '</b> fois <b>' . Atomik::formatName($chanceux) . '</b> !';
 		}
 
 		fwrite($fichierDieux, $infosDieux);
