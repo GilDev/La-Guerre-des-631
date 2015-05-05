@@ -9,7 +9,7 @@ Ceci est le premier site que je développe en utilisant un framework, le code n'
 ## Pré-requis
 
 * Serveur web Apache (ou Nginx mais la configuration n'est pas fournie)
-* PHP
+* PHP (>= 5.3)
 
 
 ## Installation
@@ -23,3 +23,4 @@ Pour créer la base de données (SQLite), entrez la commande suivante depuis la 
 * Le fichier *app/config.php* permet de modifier les administrateurs à l'aide d'un tableau nommé `adminIds` qui contient l'`id` de chaque administrateur dans la table `eleves`
 * La commande `php index.php new-day` doit être exécutée chaque jour à une heure précise
 * Les mots de passe sont volontairement stockés en clair
+* La commande `php index.php import-csv <donnees.csv>` importe dans la base de données tous les élèves stockés dans un fichier CSV de la forme `<nom>,<prenom>,<date de naissance>` avec date de naissance de format `JJ/MM/AAAA`
