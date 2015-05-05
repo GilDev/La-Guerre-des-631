@@ -38,7 +38,7 @@ if (isset($dieux[1])): ?>
 				<?php if ($eleve['vie'] > 0): ?>
 				<div class="row">
 					<div class="col-xs-2">
-						<h5>Votre vie :</h5>
+						<h5>Ta vie :</h5>
 					</div>
 					<div class="col-xs-10">
 						<p><?php echo $this->progressBar($eleve['vie']) ?></p>
@@ -51,13 +51,13 @@ if (isset($dieux[1])): ?>
 				</div>
 				<div class="row">
 					<div class="col-xs-12">
-						<h5><?php echo ($eleve['a_soigne']) ? 'Vous avez déjà soigné quelqu\'un aujourd\'hui.' : 'Vous pouvez soigner quelqu\'un aujourd\'hui.' ?></h5>
+						<h5><?php echo ($eleve['a_soigne']) ? 'Tu as déjà soigné quelqu\'un aujourd\'hui.' : 'Tu peux soigner quelqu\'un aujourd\'hui.' ?></h5>
 					</div>
 				</div>
 				<?php else: ?>
 				<div class="row">
 					<div class="col-xs-12">
-						<h3>Vous êtes mort… ='(</h3>
+						<h3>Tu es mort… ='(</h3>
 						<p>Il parait que l'on a ce qu'on mérite, qu'en penses-tu ?</p>
 					</div>
 				</div>
