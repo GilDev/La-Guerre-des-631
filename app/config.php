@@ -19,7 +19,8 @@ Atomik::set(array(
 		'Logger',
 		'Console',
 		'Errors' => array(
-			'catch_errors' => true
+			'catch_errors' => true,
+			'error_view' => 'errors/404'
 		)
 	),
 
@@ -29,5 +30,5 @@ Atomik::set(array(
 	'app.layout' => '_layout',
 
 	'atomik.url_rewriting' => true,
-	'atomik.debug' => true
+	'atomik.debug' => false
 ));

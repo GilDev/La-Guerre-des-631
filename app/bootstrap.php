@@ -2,7 +2,6 @@
 
 if (Atomik::get('atomik.debug')) {
 	ini_set('display_errors', 1);
-	Atomik::set('plugins.Errors.catch_errors', false);
 }
 
 function databaseLog($message, $level)
